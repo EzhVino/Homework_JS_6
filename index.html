@@ -34,42 +34,65 @@
         вывести этот элемент в консоль.
         */
 
-        const cardSuperLink = getElementById('super_link');
-        
+        console.log(document.getElementById('super_link'));
 
         /*
         2. Внутри всех элементов на странице, которые имеют класс "card-link",
         поменяйте текст внутри элемента на "ссылка".
         */
 
+        const cardLink = document.querySelectorAll('.card-link');
+        cardLink.forEach(cardLink => cardLink.textContent = 'ссылка');
+
         /*
         3. Найти все элементы на странице с классом "card-link", которые лежат в
         элементе с классом "card-body" и вывести полученную коллекцию в консоль.
         */
+
+        console.log(document.querySelector('.card-body').querySelectorAll('.card-link'));
 
         /*
         4. Найти первый попавшийся элемент на странице у которого есть атрибут
         data-number со значением 50 и вывести его в консоль.
         */
 
+        console.log(document.querySelector('[data-number="50"]'));
+
         /*
         5. Выведите содержимое тега title в консоль.
         */
+
+        console.log(document.querySelector('title').innerHTML);
+
+        // У нас в задании включен тег title. Или речь про тег с классом cart-title? Тогда так:
+
+        console.log(document.querySelector('.card-title').innerHTML);
 
         /*
         6. Получите элемент с классом "card-title" и выведите его родительский узел
         в консоль.
         */
 
+        const cardTitle = document.querySelector('.card-title');
+        console.log(cardTitle.parentNode);
+
         /*
         7. Создайте тег p, запишите внутри него текст "Привет" и добавьте созданный
         тег в начало элемента, который имеет класс "card".
         */
 
+        const newParagraph = document.createElement('p');
+        const card = document.querySelector('.card');
+
+        newParagraph.textContent = 'Привет';
+
+        card.prepend(newParagraph);
+
         /*
         8. Удалите тег h6 на странице.
         */
-
+        const subtitleElement = document.querySelector('h6');
+        subtitleElement.remove();
 
     </script>
 </body>
