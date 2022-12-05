@@ -33,40 +33,41 @@
         1. Найти по id, используя getElementById, элемент с id равным "super_link" и
         вывести этот элемент в консоль.
         */
-
-        console.log(document.getElementById('super_link'));
+        const cardSuperLink = document.getElementById('super_link');
+        console.log(cardSuperLink);
 
         /*
         2. Внутри всех элементов на странице, которые имеют класс "card-link",
         поменяйте текст внутри элемента на "ссылка".
         */
 
-        const cardLink = document.querySelectorAll('.card-link');
-        cardLink.forEach(cardLink => cardLink.textContent = 'ссылка');
+        const cardLinks = document.querySelectorAll('.card-link');
+        cardLinks.forEach(allCardLinks => allCardLinks.textContent = 'ссылка');
 
         /*
         3. Найти все элементы на странице с классом "card-link", которые лежат в
         элементе с классом "card-body" и вывести полученную коллекцию в консоль.
         */
-
-        console.log(document.querySelector('.card-body').querySelectorAll('.card-link'));
+        const bodyLinks = document.querySelector('.card-body').querySelectorAll('.card-link');
+        console.log(bodyLinks);
 
         /*
         4. Найти первый попавшийся элемент на странице у которого есть атрибут
         data-number со значением 50 и вывести его в консоль.
         */
-
-        console.log(document.querySelector('[data-number="50"]'));
+        const numberedDataElem = document.querySelector('[data-number="50"]');
+        console.log(numberedDataElem);
 
         /*
         5. Выведите содержимое тега title в консоль.
         */
+        const titleElem = document.querySelector('title');
+        console.log(titleElem.innerHTML);
 
-        console.log(document.querySelector('title').innerHTML);
+        // У нас же в коде задания нет тега title. Или речь про тег с классом cart-title? Тогда так:
 
-        // У нас в задании включен тег title. Или речь про тег с классом cart-title? Тогда так:
-
-        console.log(document.querySelector('.card-title').innerHTML);
+        const cardTitleElem = document.querySelector('.card-title');
+        console.log(cardTitleElem.innerHTML);
 
         /*
         6. Получите элемент с классом "card-title" и выведите его родительский узел
